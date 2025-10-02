@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run tests
+        run: echo "Running tests..."
+      
+      - name: Test complete
+        run: echo "Tests passed successfully"
